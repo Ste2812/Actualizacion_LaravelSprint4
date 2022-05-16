@@ -8,6 +8,7 @@
 
     <p><strong>ID: </strong>{{$team->id}}</p>
     <p><strong>Nombre: </strong>{{$team->nombre}}</p>
+    <p><strong>Numero Jugadores: </strong>{{$team->num_jugadores}}</p>
     <p><strong>Tipo: </strong>{{$team->tipo}}</p>
     <p><strong>Descripción: </strong>{{$team->descripcion}}</p>
 

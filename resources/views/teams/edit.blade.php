@@ -24,11 +24,11 @@
                 Tipo:
                 <br>
                 <select name="tipo">
-                    <option></option>
+                   
                     <option value="escuela">Escuela</option>
                     <option value="club_deportivo">Club deportivo</option>
                     <option value="otro">Otro</option>
-                    {{$team->tipo}}
+                    {{old('tipo',$team->tipo)}}
                 </select>
             </label>
             @error('tipo')

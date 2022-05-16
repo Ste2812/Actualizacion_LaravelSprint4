@@ -19,15 +19,15 @@
             <label for="start">
                 Fecha
                 <br>
-                <input type="date" name="fecha" id="fecha" value="{{old('fecha', $game->fecha)}}">
+                <input type="date" name="fecha" id="fecha" value={{old('fecha', $game->fecha)}}>
             </label>
                 <div class="mb-2">
                     <label class="block mb-2 text-sm font-medium text-gray-900 ">
                         Equipo local:
                         <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="id_equipo_A" id="id_equipo_A">
                             @foreach ($teams as $team)
-                                <option></option>
-                                <option value="{{$team->id}}">{{$team->nombre}}</option>
+
+                                <option value="{{$team->id}}">{{old('id_equipo_A', $team->nombre)}}</option>
                                 @endforeach
                         </select>
                     </label>
@@ -37,8 +37,8 @@
                             Equipo visitante:
                             <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="id_equipo_B" id="id_equipo_B">
                                @foreach ($teams as $team)
-                                <option></option>
-                                <option value="{{$team->id}}">{{$team->nombre}}</option>
+
+                                <option value="{{$team->id}}">{{old('id_equipo_B',$team->nombre)}}</option>
                                 @endforeach
                             </select>
                         </label>
@@ -46,7 +46,7 @@
             <label>
                 Comentarios:
                 <br>
-                <textarea name="comentario" id="" cols="18" rows="8">{{old('comentario', $game->comentarios)}}</textarea>
+                <textarea name="comentarios" id="comentarios" cols="18" rows="8">{{old('comentarios', $game->comentarios)}}</textarea>
             </label>
             <br><br>
             <button class="h-8 px-4 text-center text-l bg-green-500 hover:bg-green-700 text-white font-bold rounded" type="submit">Actualizar</button>
