@@ -19,7 +19,9 @@ return new class extends Migration
             $table->dateTime('fecha');
             $table->timestamps();
             $table->string('lugar');
-            
+            $table->integer('resultado_A');
+            $table->integer('resultado_B');
+
             $table->text('comentarios')->nullable();
 
             $table->foreignId('id_equipo_A')->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');

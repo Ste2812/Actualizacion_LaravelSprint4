@@ -41,7 +41,7 @@ class GameController extends Controller
      */
     public function store(StoreGame $request)
     {
-    
+
         $teams= new Team();
         $teams= Team::all();
         //$game= Game::create($request->all());
@@ -62,6 +62,8 @@ class GameController extends Controller
         $game->id_equipo_A= $request->id_equipo_A;
         $game->id_equipo_B= $request->id_equipo_B;
         $game->comentarios= $request->comentarios;
+        $game->resultado_A= $request->resultado_A;
+        $game->resultado_B= $request->resultado_B;
         $game->slug= null;
 
         $game->save();

@@ -12,7 +12,7 @@
 <table class="ml-4 border-4 border-black">
     <thead>
     <tr>
-        <th class="pr-10 border-r-2 border-black">ID</th>
+       
         <th class="pr-20 border-r-2 border-black">nombre</th>
         <th class="pr-20 border-r-2 border-black">tipo</th>
         <th class="px-2 border-b-2 border-black text-center">Opcion</th>
@@ -24,7 +24,6 @@
 
 <tbody>
 <tr>
-    <td class="border-2 border-black font-semibold">{{$team->id}}</td>
 
     <td class="border-2 border-black">{{$team->nombre}}</td>
     <td class="border-2 border-black">{{$team->tipo}}</td>
@@ -48,11 +47,13 @@
     <table class="ml-4 border-4 border-black">
         <thead>
         <tr>
-            <th class="pr-10 border-r-2 border-black">ID</th>
+
             <th class="pr-20 border-r-2 border-black">Fecha</th>
             <th class="pr-20 border-r-2 border-black">Lugar</th>
             <th class=" border-r-2 border-black">Equipo local</th>
             <th class=" border-r-2 border-black">Equipo visitante</th>
+            <th class="border-r-2 border-black">Resultado equipo local</th>
+            <th class="border-r-2 border-black">Resultado equipo visitante</th>
             <th class="px-2 border-b-2 border-black text-center">Opcion</th>
 
 
@@ -60,13 +61,16 @@
         </thead>
         @foreach ($games as $game)
 
+
     <tbody>
     <tr>
-        <td class="border-2 border-black font-semibold">{{$game->id}}</td>
+
         <td class="border-2 border-black">{{$game->fecha}}</td>
         <td class="border-2 border-black">{{$game->lugar}}</td>
         <td class="border-2 border-black">{{$game->id_equipo_A}}</td>
         <td class="border-2 border-black">{{$game->id_equipo_B}}</td>
+        <td class="border-2 border-black">{{$game->resultado_A}}</td>
+        <td class="border-2 border-black">{{$game->resultado_B}}</td>
 
         <td class="border-b-2 border-black"><a class="btn ml-2 text-center text-sm bg-sky-500 hover:bg-sky-700 text-white font-bold rounded" href="{{route('game.show', $game)}}">Mostrar</a></td>
 

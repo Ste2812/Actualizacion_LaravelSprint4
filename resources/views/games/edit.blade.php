@@ -26,8 +26,11 @@
                         Equipo local:
                         <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="id_equipo_A" id="id_equipo_A">
                             @foreach ($teams as $team)
-
-                                <option value="{{$team->id}}">{{old('id_equipo_A', $team->nombre)}}</option>
+                            @if (old('id_equipo_A', $game->id_equipo_A) == $team->id)
+                                <option value="{{$team->id}}" selected>{{$team->nombre}}</option>
+                            @else
+                                <option value="{{$team->id}}">{{$team->nombre}}</option>
+                                @endif
                                 @endforeach
                         </select>
                     </label>
@@ -37,11 +40,27 @@
                             Equipo visitante:
                             <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="id_equipo_B" id="id_equipo_B">
                                @foreach ($teams as $team)
-
-                                <option value="{{$team->id}}">{{old('id_equipo_B',$team->nombre)}}</option>
+                               @if (old('id_equipo_B', $game->id_equipo_B) == $team->id)
+                                <option value="{{$team->id}}" selected>{{$team->nombre}}</option>
+                                @else
+                                <option value="{{$team->id}}">{{$team->nombre}}</option>
+                                @endif
                                 @endforeach
                             </select>
                         </label>
+                        <br>
+                        <label>
+                            Resultado equipo local: <br>
+                            <input type="number" id="resultado_A" name="resultado_A" value="{{old('resultado_A', $game->resultado_A)}}">
+                        </label>
+                        <br><br>
+
+                        <label>
+                            Resultado equipo visitante: <br>
+                            <input type="number" id="resultado_B" name="resultado_B" value="{{old('resultado_B', $game->resultado_B)}}">
+                        </label>
+                        <br>
+
             <br>
             <label>
                 Comentarios:

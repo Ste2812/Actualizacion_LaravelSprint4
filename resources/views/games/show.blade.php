@@ -11,6 +11,7 @@
     <p><strong>Equipo visitante: </strong>{{$game->id_equipo_B}}</p>
 
 
+
     <a class="btn ml-2 mr-2 text-center text-sm bg-green-500 hover:bg-green-700 text-white font-bold rounded" href="{{route('game.edit', $game)}}">Editar</a>
 
     <form action="{{route('game.destroy', $game)}}" method="POST">

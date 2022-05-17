@@ -58,6 +58,17 @@
 
                 @enderror
                 </div>
+                <br>
+                <label>
+                    Resultado equipo local: <br>
+                    <input type="number" id="resultado_A" name="resultado_A" value="resultado_A">
+                </label>
+                <br>
+
+                <label>
+                    Resultado equipo visitante:
+                    <input type="number" id="resultado_B" name="resultado_B" value="resultado_B">
+                </label>
 
                 <div class="mb-2">
                 <label>

@@ -27,6 +27,8 @@ class GameFactory extends Factory
             'lugar'=>$this->faker->city(),
             'id_equipo_A'=>$this->faker->randomElement(Team::all()->pluck('id')->toArray()),
             'id_equipo_B'=>$this->faker->randomElement(Team::all()->pluck('id')->toArray()),
+            'resultado_A'=>$this->faker->numberBetween(0,10),
+            'resultado_B'=>$this->faker->numberBetween(0,10),
             'comentarios'=>$this->faker->paragraph()
         ];
     }
